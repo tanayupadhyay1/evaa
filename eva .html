@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess My Favorite Song</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #009688;
+        }
+        p {
+            color: #777;
+        }
+        #answerInput, #submitBtn {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #submitBtn {
+            background-color: #009688;
+            color: #fff;
+            cursor: pointer;
+        }
+        #submitBtn:hover {
+            background-color: #00796b;
+        }
+        #correctAnswer {
+            display: none;
+            width: 100%; /* Set the width to 100% for full-screen effect */
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess My Favorite Song</h1>
+    <p>Hint: Shreya Ghosal</p>
+
+    <label for="answerInput">Enter your guess:</label>
+    <input type="text" id="answerInput" placeholder="Type your guess">
+
+    <button id="submitBtn" onclick="checkAnswer()">Submit</button>
+
+    <video id="correctAnswer" controls>
+        <source src="C:\Users\TANAY UPADHYAY\Desktop\my codes\evu.mp4" control type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById('answerInput').value.toLowerCase();
+
+            if (userAnswer === 'bahara') {
+                alert('Correct answer! Playing your favorite video.');
+                playFavoriteVideo();
+            } else {
+                alert('Wrong answer! 😢');
+            }
+        }
+
+        function playFavoriteVideo() {
+            var video = document.getElementById('correctAnswer');
+            video.style.display = 'block';
+            video.play();
+        }
+    </script>
+</body>
+</html>
